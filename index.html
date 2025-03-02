@@ -8,8 +8,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style>
+    #themebtn{
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #clickButton:disabled{
+      background-color: gray;
+    cursor: pointer;
+   }
+    #clickButton1:disabled{
+    background-color: gray;
+    cursor: pointer;
+   }
+    #clickButton2:disabled{
+    background-color: gray;
+    cursor: pointer;
+   }
+    #clickButton3:disabled{
+    background-color: gray;
+    cursor: pointer;
+   }
+    #clickButton4:disabled{
+    background-color: gray;
+    cursor: pointer;
+   }
+    #clickButton5:disabled{
+    background-color: gray;
+    cursor: pointer;
+   }
+    
+    #textContainer{
+        display: none;
+      }
+    #theContainer{
+        display: none;
+      }
+    #textContainer2{
+        display: none;
+      }
+    #textContainer3{
+        display: none;
+      }
+    #textContainer4{
+        display: none;
+      }
+    #textContainer5{
+        display: none;
+      }
+    
+    
+  
+  </style>
+
 </head>
-<body class="bg-slate-100">
+<body class="bg-slate-100 ">
     <div class="h-[100px] bg-white w-[80%] m-auto rounded-lg mt-10 ">
 
       <div class="flex items-center justify-between ">
@@ -20,8 +74,8 @@
 
         <div class="flex mr-8">
             <img class="mt-6 h-7" src="assets/checkbox.png" alt="">
-            <h1 class="text-[35px] font-bold mt-3 ml-2">23</h1>
-            <img class="mt-3 ml-10 bg-slate-200 rounded-lg " src="assets/theme-btn.png" alt="">
+            <h1 id="number1" class="text-[35px] font-bold mt-3 ml-2 ">23</h1>
+            <img id="themebtn" onclick="changeBackgroundColor()" class="mt-3 ml-10 bg-slate-200 rounded-lg " src="assets/theme-btn.png" alt="">
         </div>
       </div>
 
@@ -41,7 +95,7 @@
            
             <div class="">
              <h1 class=" text-[20px] mt-2">Task Assigned </h1>
-             <h1 class="text-[40px] font-bold ">05</h1>
+             <h1 id="number2" class="text-[40px] font-bold ">6</h1>
             </div>
            </div>
             <!-- 2rd-design -->
@@ -76,7 +130,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton" onclick="handleClick()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
@@ -89,7 +143,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton1" onclick="handleClick1()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
@@ -103,7 +157,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton2" onclick="handleClick2()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
@@ -117,7 +171,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton3" onclick="handleClick3()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
@@ -131,7 +185,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton4" onclick="handleClick4()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
@@ -145,7 +199,7 @@
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton5" onclick="handleClick5()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
            
@@ -157,12 +211,16 @@
         <img class="" src="assets/activity.png" alt="">
         <p class="ml-5">Activity Log</p>
        </div>
-        <button class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-4 ml-29">Clear History</button>
-        <p class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">You have Complete The Task Add<br> Dark Mode at 12:48:15 PM</p>
-        <p  class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">You have Complete The Task Add<br> Dark Mode at 12:48:15 PM</p>
+        <button onclick="hideParagraph(false)"  class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-4 ml-29">Clear History</button>
+        <p id="textContainer" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">i have Complete The Task Add<br> Dark Mode at 12:48:15 PM</p>
+        <p id="theContainer" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">you have Complete The Task Add<br> Dark Mode at 1:48:15 PM</p>
+        <p id="textContainer2" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">we have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
+        <p id="textContainer3" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">cloud have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
+        <p id="textContainer4" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">pain have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
+        <p id="textContainer5" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">red have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
          
       </div>
     </div>
-    
+     <script src="script.js"></script>
 </body>
 </html>
