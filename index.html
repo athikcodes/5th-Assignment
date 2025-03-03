@@ -10,6 +10,13 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
   <style>
+    #timeDisplay{
+      /* background-color: rgb(245, 245, 20);
+      height: 25px;
+      color: black; */
+      
+      
+    }
     #themebtn{
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
@@ -39,10 +46,10 @@
     cursor: pointer;
    }
     
-    #textContainer{
+    #textContainer0{
         display: none;
       }
-    #theContainer{
+    #textContainer1{
         display: none;
       }
     #textContainer2{
@@ -75,7 +82,9 @@
         <div class="flex mr-8">
             <img class="mt-6 h-7" src="assets/checkbox.png" alt="">
             <h1 id="number1" class="text-[35px] font-bold mt-3 ml-2 ">23</h1>
-            <img id="themebtn" onclick="changeBackgroundColor()" class="mt-3 ml-10 bg-slate-200 rounded-lg " src="assets/theme-btn.png" alt="">
+            <div class=" bg-slate-200 w-14 h-14 rounded-full ml-10 mt-3">
+              <img id="themebtn" onclick="changeBackgroundColor()" class="mt-2 ml-2   "src="assets/theme-btn.png" alt="">
+            </div>
         </div>
       </div>
 
@@ -116,90 +125,92 @@
             
              <div class="">
               <h1 class=" text-[20px] mt-2">Wed,</h1>
-              <h1 class="text-[20px] font-bold ">Jul 28 2025  </h1>
+              
+                <h1 id="dateContainer" class="text-[20px] font-bold ">Jul 28 2025  </h1>
+              
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">ShopEase</p>
               <p class="font-bold text-[24px] mb-4">Fix Mobile Button Issue </p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                 and ensure onClick works properly</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton" onclick="handleClick()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton" onclick="handleClick() ; showCurrentTime(1)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">CloudSync</p>
               <p class="font-bold text-[24px] mb-4">Add Dark Mode </p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton1" onclick="handleClick1()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton1" onclick="handleClick1(); showCurrentTime(2)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">SwiftPay</p>
               <p class="font-bold text-[24px] mb-4">Optimize  Home page  </p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                 and ensure onClick works properly</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton2" onclick="handleClick2()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton2" onclick="handleClick2() ; showCurrentTime(3)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">Meta</p>
               <p class="font-bold text-[24px] mb-4">Add new emoji 🤲</p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                 and ensure onClick works properly</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton3" onclick="handleClick3()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton3" onclick="handleClick3(); showCurrentTime(4)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">Google LLC</p>
               <p class="font-bold text-[24px] mb-4">Integrate OpenAI API </p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                 and ensure onClick works properly</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton4" onclick="handleClick4()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton4" onclick="handleClick4(); showCurrentTime(5)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
 
             <div class="w-[342px] h-[317px] rounded-lg bg-slate-100 p-6">
               <p class="w-[100px] h-10 bg-white text-center mb-4 pt-2">Glassdoar</p>
               <p class="font-bold text-[24px] mb-4">Improve Job searching </p>
-              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 overflow-hidden mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+              <p class="w-[292px] h-[90px] bg-white rounded-lg text-center p-2 text-[13px] mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                 and ensure onClick works properly</p>
              <div class="flex justify-between">
               <div>
                 <p class="mb-1">Deadline</p>
                 <p class="font-bold mb-4">21 March 2025</p>
               </div>
-              <button id="clickButton5" onclick="handleClick5()" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
+              <button id="clickButton5" onclick="handleClick5();showAlert() ; showCurrentTime(6)" class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-3">Completed</button>
              </div>
             </div>
            
@@ -211,13 +222,17 @@
         <img class="" src="assets/activity.png" alt="">
         <p class="ml-5">Activity Log</p>
        </div>
-        <button onclick="hideParagraph(false)"  class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-4 ml-29">Clear History</button>
-        <p id="textContainer" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">i have Complete The Task Add<br> Dark Mode at 12:48:15 PM</p>
-        <p id="theContainer" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">you have Complete The Task Add<br> Dark Mode at 1:48:15 PM</p>
-        <p id="textContainer2" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">we have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
-        <p id="textContainer3" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">cloud have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
-        <p id="textContainer4" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">pain have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
-        <p id="textContainer5" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">red have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
+        <button onclick="hideParagraph(false); updateDate()"  class="text-white bg-blue-600 h-10 w-32 rounded-lg mt-4 ml-29">Clear History</button>
+
+        <p id="textContainer0" id="timeDisplay" class=" h-16 w-73 pl-3 rounded-lg ml-10 mt-11 p-2">i have Complete The Task Add<br> Dark Mode at 12:48:15 PM</p>
+        <p id="textContainer1" id="timeDisplay" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">you have Complete The Task Add<br> Dark Mode at 1:48:15 PM</p>
+        <p id="textContainer2" id="timeDisplay" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">we have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
+        <p id="textContainer3" id="timeDisplay" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">cloud have Complete The Task Add<br> Dark Mode at 4:48:15 PM</p>
+        <p id="textContainer4" id="timeDisplay" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-11 p-2">pain have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
+        <p id="textContainer5" id="timeDisplay" class=" h-16 w-73 pl-3 bg-slate-200 rounded-lg ml-10 mt-7 p-2">red have Complete The Task Add<br> Dark Mode at 5:48:15 PM</p>
+        <div id="timeDisplay" onclick="hideParagraph(false)" class="h-14 w-70 mt-4 ml-7  pl-3 rounded-lg"></div>
+        
+        
          
       </div>
     </div>
