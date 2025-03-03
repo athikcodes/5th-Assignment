@@ -145,6 +145,13 @@ function hideParagraph(show){
     }
 }
 
+function clickme(){
+    window.location.href = "question.html"
+}
+function goBack(){
+    window.location.href ="index.html"
+}
+
 
 
 
